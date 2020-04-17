@@ -66,6 +66,8 @@ int main()
                     }
                     else{
                         cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
+                        system ("pause");
+                        system ("cls");
                         goto case1;
                     }
                     goto menu;
