@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586673561 source:c:\users\fendi irfan\desktop\tubesstd\body child.cpp
+1587106275 source:c:\users\fendi irfan\desktop\tubesstd\body child.cpp
 	"RELASI.h"
 	"PARENT.h"
 	"CHILD.h"
@@ -14,7 +14,7 @@
 	"RELASI.h"
 	"CHILD.h"
 
-1587101667 c:\users\fendi irfan\desktop\tubesstd\child.h
+1587106388 c:\users\fendi irfan\desktop\tubesstd\child.h
 	<iostream>
 	"RELASI.h"
 	"PARENT.h"
