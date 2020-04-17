@@ -20,7 +20,7 @@ int main()
             cout<<"Pilih Menu : ";
             cin>>pil;
             cout<<endl<<endl;
-            system ("pause");
+     //       system ("pause");
             system ("cls");
             switch (pil){
                 case 1 :
@@ -32,7 +32,7 @@ int main()
                     cout<<"| | ============================================================== | |"<<endl;
                     cout<<"Pilih Menu : ";
                     cin>>pil;
-                    system ("pause");
+  //                  system ("pause");
                     system ("cls");
                     if(pil==1){
 
@@ -44,9 +44,10 @@ int main()
 
                     }
                     else{
-                        cout<<"Mohon Pilih Menu yang valid"<<endl;
+                        cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
                         goto case1;
                     }
+                    goto menu;
 
                 case 2 :
                     goto menu;
