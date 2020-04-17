@@ -6,6 +6,16 @@ using namespace std;
 
 int main()
 {
+    addressChild Ac;
+    addressParent Ap;
+    addressRelasi Ar;
+    Child c;
+    Parent p;
+    Relasi r;
+
+    createListParent(p);
+    createListRelasi(r);
+    createListChild(c);
 
     cout<<"| | =============================PERPUSTAKAAN========================== | |"<<endl;
             cout<<"| | ========================SELAMAT DATANG======================== | |"<<endl;
@@ -19,9 +29,9 @@ int main()
             cout<<"| | ============================================================== | |"<<endl;
             cout<<"Pilih Menu : ";
             cin>>pil;
-            cout<<endl<<endl;
      //       system ("pause");
             system ("cls");
+
             switch (pil){
                 case 1 :
                     case1:
@@ -35,7 +45,18 @@ int main()
   //                  system ("pause");
                     system ("cls");
                     if(pil==1){
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        string judul, penulis, publisher, tahun, abstrak;
+                        cout<<"Input Nama Artikel Ilmiah   :"<<endl;
+                        cin>>judul;
+                        cout<<"Input Penulis               :"<<endl;
+                        cin>>penulis;
+                        cout<<"Input Publisher             :"<<endl;
+                        cin>>publisher;
+                        cout<<"Input Tahun                 :"<<endl;
+                        cin>>tahun;
+                        cout<<"Input Abstrak               :"<<endl;
+                        cin>>abstrak;
+
                     }
                     else if(pil==2){
 

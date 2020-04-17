@@ -3,7 +3,7 @@
 
 #include <iostream>
 using namespace std;
-#define firstChild(A) A->firstChild
+#define firstChild(A) A.firstChild
 #define prev(P) P->prev
 #include "RELASI.h"
 #include "PARENT.h"
@@ -18,4 +18,7 @@ struct aChild{
 struct Child { //membuat list Child
     addressChild firstChild;
 };
+
+void createListChild(Child &c);
+void createElementChild(addressChild c,infoChild w);
 #endif // CHILD_H_INCLUDED
