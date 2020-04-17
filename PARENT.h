@@ -24,7 +24,7 @@ struct Parent { //membuat list parent
     addressParent firstParent;
 };
 void createListParent(Parent &p);
-void TambahArtikel(Parent &p,string judul,string penulis,string publisher,string tahun,string abstrak); //procedure menambah artikel beserta keywordnya
-void insertFirstParent(Parent p,addressParent a);
+void insertFirstParent(Parent &p,addressParent a);
 void createElementParent(addressParent &p,string judul,string penulis,string publisher,string tahun,string abstrak);
+addressParent findParent(Parent p,string judul);
 #endif // PARENT_H_INCLUDED

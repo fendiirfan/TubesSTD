@@ -17,28 +17,36 @@ int main()
     createListRelasi(r);
     createListChild(c);
 
-    cout<<"| | =============================PERPUSTAKAAN========================== | |"<<endl;
+            cout<<"| | ========================PERPUSTAKAAN========================== | |"<<endl;
             cout<<"| | ========================SELAMAT DATANG======================== | |"<<endl;
             cout<<endl;
-            menu:
+            menuUtama:
             int pil;
-            cout<<"| | =========================MENU PILIHAN========================= | |"<<endl;
-            cout<<"| | 1. Login Sebagai Pengunjung Perpustakaan                       | |"<<endl;
-            cout<<"| | 2. Login Sebagai Pegawai Perpustaka                            | |"<<endl;
+            cout<<"| | =========================MENU UTAMA========================= | |"<<endl;
+            cout<<"| | 1. Login Sebagai Pegawai Perpustakaan                       | |"<<endl;
+            cout<<"| | 2. Login Sebagai Pengunjung Perpustaka                            | |"<<endl;
             cout<<"| | 3. Logout                                                      | |"<<endl;
             cout<<"| | ============================================================== | |"<<endl;
             cout<<"Pilih Menu : ";
             cin>>pil;
+            if(pil!=1 && pil!=2 && pil!=3 ){
+                system ("cls");
+                cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
+                system ("pause");
+                system ("cls");
+                goto menuUtama;
+            }
      //       system ("pause");
             system ("cls");
 
             switch (pil){
                 case 1 :
-                    case1:
-                    cout<<"| | =======================MENU TAMBAH DATA======================= | |"<<endl;
+                    menuPEGAWAI:
+                    cout<<"| | =======================MENU PEGAWAI ======================= | |"<<endl;
                     cout<<"| | 1. Tambah Daftar Artikel Ilmiah                                | |"<<endl;
                     cout<<"| | 2. Hapus Daftar Artikel Ilmiah                                 | |"<<endl;
-                    cout<<"| | 3. Hapus Daftar Suatu Keyword                                    | |"<<endl;
+                    cout<<"| | 3. Hapus Daftar Suatu Keyword                                  | |"<<endl;
+                    cout<<"| | 4. Menu Utama                                                  | |"<<endl;
                     cout<<"| | ============================================================== | |"<<endl;
                     cout<<"Pilih Menu : ";
                     cin>>pil;
@@ -46,7 +54,8 @@ int main()
                     system ("cls");
                     if(pil==1){
                         string judul, penulis, publisher, tahun, abstrak;
-                        cout<<"Input Nama Artikel Ilmiah   :"<<endl;
+                        string keyword;
+                        cout<<"Input Judul Artikel Ilmiah   :"<<endl;
                         cin>>judul;
                         cout<<"Input Penulis               :"<<endl;
                         cin>>penulis;
@@ -56,6 +65,22 @@ int main()
                         cin>>tahun;
                         cout<<"Input Abstrak               :"<<endl;
                         cin>>abstrak;
+                        cout<<"Input Keyword               :"<<endl;
+                        cin>>keyword;
+                        createElementParent(Ap,judul,penulis,publisher,tahun,abstrak);
+                        insertFirstParent(p,Ap);
+                        createElementRelasi(Ar);
+                        insertLastRelasi(r,Ar);
+                        if(findChild(c,keyword)==NULL || firstChild(c)==NULL){
+                            createElementChild(Ac,keyword);
+                            insertLastChild(c,Ac);
+                        }
+                        else{
+                            Ac=findChild(c,keyword);
+                        }
+
+                        connect(Ar,Ap,Ac);
+                        cout<<info(nextC(Ar))<<" "<<info(nextP(Ar)).judul<<endl;
 
                     }
                     else if(pil==2){
@@ -64,14 +89,24 @@ int main()
                     else if(pil==3){
 
                     }
+                    else if(pil==4){
+                        goto menuUtama;
+                    }
                     else{
                         cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
-                        goto case1;
+                        system ("pause");
+                        system ("cls");
+                        goto menuPEGAWAI;
                     }
-                    goto menu;
+                    system ("pause");
+                    system ("cls");
+                    cout<<"| | =======================BERHASIL======================= | |"<<endl;
+                    system ("pause");
+                    system ("cls");
+                    goto menuPEGAWAI;
 
                 case 2 :
-                    goto menu;
+                    goto menuUtama;
                 case 3 :
                     cout<<"| | ==========TERIMA KASIH TELAH MENGGUNAKAN PROGRAM INI========== | |";
                     break;

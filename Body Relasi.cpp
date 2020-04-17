@@ -5,7 +5,7 @@
 void createListRelasi(Relasi &r){
     firstRelasi(r)=NULL;
 }
-void creaElementRelasi(addressRelasi &e){
+void createElementRelasi(addressRelasi &e){
     e = new aRelasi;
     next(e)=NULL;
     nextC(e)=NULL;
@@ -29,7 +29,9 @@ void insertLastRelasi(Relasi &r,addressRelasi a){
         next(a)=firstRelasi(r);
     }
 }
-void connect(addressRelasi &r,addressParent &p,addressChild &c){
 
+void connect(addressRelasi &ar,addressParent &p,addressChild &c){
+    nextC(ar)=c;
+    nextP(ar)=p;
 }
 
