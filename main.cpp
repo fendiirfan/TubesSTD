@@ -72,11 +72,15 @@ int main()
                         createElementRelasi(Ar);
                         insertLastRelasi(r,Ar);
                         if(findChild(c,keyword)==NULL || firstChild(c)==NULL){
+
                             createElementChild(Ac,keyword);
                             insertLastChild(c,Ac);
+                            cout<<"irfan"<<endl;
                         }
                         else{
+
                             Ac=findChild(c,keyword);
+                            cout<<"fendi"<<endl;
                         }
 
                         connect(Ar,Ap,Ac);

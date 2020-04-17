@@ -25,10 +25,13 @@ void insertLastChild(Child &c,addressChild ac){
     if(firstChild(c)==NULL){
         firstChild(c)=ac;
     }
-    addressChild a = firstChild(c);
-    while(next(a)!=NULL){
-        a=next(a);
+    else{
+        addressChild a = firstChild(c);
+        while(next(a)!=NULL){
+            a=next(a);
+        }
+        next(a)=ac;
+        prev(ac)=a;
     }
-    next(a)=ac;
-    prev(ac)=a;
+
 }
