@@ -4,12 +4,15 @@
 #include <iostream>
 using namespace std;
 #define firstChild(A) A->firstChild
+#define prev(P) P->prev
+#include "RELASI.h"
+#include "PARENT.h"
 
 typedef string infoChild;
 typedef struct aChild *addressChild;
 struct aChild{
     infoChild info;
-    addressChild next; //next menunjukan elemen yg ditunjuk di list Child
+    addressChild next,prev; //next menunjukan elemen yg ditunjuk di list Child
 };
 
 struct Child { //membuat list Child

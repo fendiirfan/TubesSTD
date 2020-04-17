@@ -1,3 +1,35 @@
 #include "RELASI.h"
 #include "PARENT.h"
 #include "CHILD.h"
+
+void createListRelasi(Relasi &r){
+    firstRelasi(r)=NULL;
+}
+void creaElementRelasi(addressRelasi &e){
+    e = new aRelasi;
+    next(e)=NULL;
+    nextC(e)=NULL;
+    nextP(e)=NULL;
+}
+void insertLastRelasi(Relasi &r,addressRelasi a){
+    if(firstRelasi(r)==NULL){
+        firstRelasi(r)=a;
+        next(a)=a;
+    }
+    else if(next(firstRelasi(r))==firstRelasi(r)){
+        next(firstRelasi(r))=a;
+        next(a)=firstRelasi(r);
+    }
+    else{
+        addressRelasi c = firstRelasi(r);
+        do{
+            c = next(c);
+        }while(next(c)!=firstRelasi(r));
+        next(c)=a;
+        next(a)=firstRelasi(r);
+    }
+}
+void connect(addressRelasi &r,addressParent &p,addressChild &c){
+
+}
+

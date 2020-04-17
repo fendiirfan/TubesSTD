@@ -3,10 +3,13 @@
 
 #include <iostream>
 using namespace std;
-#define firstParent(A) A->firstParent
+#define firstParent(A) A.firstParent
 #define info(P) P->info
 #define next(P) P->next
 #define NIL NULL
+#include "RELASI.h"
+#include "CHILD.h"
+
 
 struct infoParent{
     string judul, penulis, publisher, tahun, abstrak;
@@ -20,5 +23,8 @@ struct aParent{
 struct Parent { //membuat list parent
     addressParent firstParent;
 };
-void tambahartikel(Parent &P,string judul, penulis, publisher, tahun, abstrak); //procedure menambah
+void createListParent(Parent &p);
+void TambahArtikel(Parent &p,string judul,string penulis,string publisher,string tahun,string abstrak); //procedure menambah artikel beserta keywordnya
+void insertFirstParent(Parent p,addressParent a);
+void createElementParent(addressParent &p,string judul,string penulis,string publisher,string tahun,string abstrak);
 #endif // PARENT_H_INCLUDED
