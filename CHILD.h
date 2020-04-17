@@ -8,10 +8,10 @@ using namespace std;
 #include "RELASI.h"
 #include "PARENT.h"
 
-typedef string infoChild;
+
 typedef struct aChild *addressChild;
 struct aChild{
-    infoChild info;
+    string info;
     addressChild next,prev; //next menunjukan elemen yg ditunjuk di list Child
 };
 
@@ -20,5 +20,7 @@ struct Child { //membuat list Child
 };
 
 void createListChild(Child &c);
-void createElementChild(addressChild c,infoChild w);
+void createElementChild(addressChild &c,string w);
+addressChild findChild(Child c,string keyword);
+void insertLastChild(Child &c,addressChild ac);
 #endif // CHILD_H_INCLUDED

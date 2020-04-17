@@ -13,7 +13,7 @@ void createElementParent(addressParent &p,string judul,string penulis,string pub
     info(p).tahun=tahun;
     info(p).abstrak=abstrak;
 }
-void insertFirstP(Parent &p,addressParent a){
+void insertFirstParent(Parent &p,addressParent a){
     if(firstParent(p)==NULL){
         firstParent(p)=a;
     }
@@ -22,9 +22,15 @@ void insertFirstP(Parent &p,addressParent a){
         firstParent(p)=a;
     }
 }
-void TambahArtikel(Parent &p,string judul,string penulis,string publisher,string tahun,string abstrak){
-    addressParent a;
-    createElementParent(a,judul,penulis,publisher,tahun,abstrak);
-    insertFirstP(p,a);
+
+addressParent findParent(Parent p,string judul){
+    addressParent a = firstParent(p);
+    while(a!=NULL){
+        if(info(a).judul==judul){
+            return a;
+        }
+        a=next(a);
+    }
+    return NULL;
 }
 

@@ -21,10 +21,10 @@ struct Relasi { //membuat list Child
 };
 
 void createListRelasi(Relasi &r);
-void insertFirstRelasi(Relasi r,addressRelasi a);
+void insertLastRelasi(Relasi &r,addressRelasi a);
 void printSemuaParentBesertaKeyword(Parent p);
-void creaElementRelasi(Relasi &r);
-
+void createElementRelasi(addressRelasi &r);
+void connect(addressRelasi &ar,addressParent &p,addressChild &c);
 
 
 #endif // RELASI_H_INCLUDED
