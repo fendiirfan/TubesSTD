@@ -22,9 +22,9 @@ int main()
             cout<<endl;
             menuUtama:
             int pil;
-            cout<<"| | =========================MENU UTAMA========================= | |"<<endl;
-            cout<<"| | 1. Login Sebagai Pegawai Perpustakaan                       | |"<<endl;
-            cout<<"| | 2. Login Sebagai Pengunjung Perpustaka                            | |"<<endl;
+            cout<<"| | ========================= MENU UTAMA ========================= | |"<<endl;
+            cout<<"| | 1. Login Sebagai Pegawai Perpustakaan                          | |"<<endl;
+            cout<<"| | 2. Login Sebagai Pengunjung Perpustaka                         | |"<<endl;
             cout<<"| | 3. Logout                                                      | |"<<endl;
             cout<<"| | ============================================================== | |"<<endl;
             cout<<"Pilih Menu : ";
@@ -42,12 +42,12 @@ int main()
             switch (pil){
                 case 1 :
                     menuPEGAWAI:
-                    cout<<"| | =======================MENU PEGAWAI ======================= | |"<<endl;
-                    cout<<"| | 1. Tambah Daftar Artikel Ilmiah                                | |"<<endl;
-                    cout<<"| | 2. Hapus Daftar Artikel Ilmiah                                 | |"<<endl;
-                    cout<<"| | 3. Hapus Daftar Suatu Keyword                                  | |"<<endl;
-                    cout<<"| | 4. Menu Utama                                                  | |"<<endl;
-                    cout<<"| | ============================================================== | |"<<endl;
+                    cout<<"| | =======================MENU PEGAWAI =======================                             | |"<<endl;
+                    cout<<"| | 1. Tambah Daftar Artikel Ilmiah                                                         | |"<<endl;
+                    cout<<"| | 2. Hapus Daftar Artikel Ilmiah                                                          | |"<<endl;
+                    cout<<"| | 3. Hapus Daftar Suatu Keyword Beserta Judul Artikel Dengan Keyword Tersebut             | |"<<endl;
+                    cout<<"| | 4. Menu Utama                                                                           | |"<<endl;
+                    cout<<"| | ===========================================================                             | |"<<endl;
                     cout<<"Pilih Menu : ";
                     cin>>pil;
   //                  system ("pause");
@@ -88,7 +88,17 @@ int main()
 
                     }
                     else if(pil==2){
+                        string judul;
 
+                        cout<<"Masukan Judul Artikel yang Ingin Dihapus             :";
+                        cin>>judul;
+                        system ("cls");
+                        if(findParent(p,judul)==NULL || firstParent(p)==NULL){
+                            cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
+                        }
+                        else{
+
+                        }
                     }
                     else if(pil==3){
 

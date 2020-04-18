@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1587126321 source:c:\users\fendi irfan\desktop\tubesstd\body child.cpp
+1587203577 source:c:\users\fendi irfan\desktop\tubesstd\body child.cpp
 	"RELASI.h"
 	"PARENT.h"
 	"CHILD.h"
 
-1587124020 c:\users\fendi irfan\desktop\tubesstd\relasi.h
+1587204438 c:\users\fendi irfan\desktop\tubesstd\relasi.h
 	<iostream>
 	"PARENT.h"
 	"CHILD.h"
@@ -25,12 +25,12 @@
 	"CHILD.h"
 	<stdlib.h>
 
-1587124217 source:c:\users\fendi irfan\desktop\tubesstd\body parent.cpp
+1587203577 source:c:\users\fendi irfan\desktop\tubesstd\body parent.cpp
 	"RELASI.h"
 	"PARENT.h"
 	"CHILD.h"
 
-1587124086 source:c:\users\fendi irfan\desktop\tubesstd\body relasi.cpp
+1587203577 source:c:\users\fendi irfan\desktop\tubesstd\body relasi.cpp
 	"RELASI.h"
 	"PARENT.h"
 	"CHILD.h"
