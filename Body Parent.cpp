@@ -24,13 +24,19 @@ void insertFirstParent(Parent &p,addressParent a){
 }
 
 addressParent findParent(Parent p,string judul){
-    addressParent a = firstParent(p);
-    while(a!=NULL){
-        if(info(a).judul==judul){
-            return a;
-        }
-        a=next(a);
+    if(firstParent(p)==NULL){
+        return NULL;
     }
-    return NULL;
+    else{
+        addressParent a = firstParent(p);
+        while(a!=NULL){
+            if(info(a).judul==judul){
+                return a;
+            }
+            a=next(a);
+        }
+        return NULL;
+    }
+
 }
 

@@ -12,14 +12,19 @@ void createElementChild(addressChild &c,string w){
     info(c)=w;
 }
 addressChild findChild(Child c,string keyword){
-    addressChild a = firstChild(c);
-    while(a!=NULL){
-        if(info(a)==keyword){
-            return a;
-        }
-        a=next(a);
+    if(firstChild(c)==NULL){
+        return NULL;
     }
-    return NULL;
+    else{
+        addressChild a = firstChild(c);
+        while(a!=NULL){
+            if(info(a)==keyword){
+                return a;
+            }
+            a=next(a);
+        }
+        return NULL;
+    }
 }
 void insertLastChild(Child &c,addressChild ac){
     if(firstChild(c)==NULL){
