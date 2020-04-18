@@ -23,4 +23,5 @@ void createListChild(Child &c);
 void createElementChild(addressChild &c,string w);
 addressChild findChild(Child c,string keyword);
 void insertLastChild(Child &c,addressChild ac);
+void deleteElementRelasi(Child &p,addressChild x);
 #endif // CHILD_H_INCLUDED

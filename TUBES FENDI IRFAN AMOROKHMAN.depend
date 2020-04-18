@@ -14,12 +14,12 @@
 	"RELASI.h"
 	"CHILD.h"
 
-1587126321 c:\users\fendi irfan\desktop\tubesstd\child.h
+1587210933 c:\users\fendi irfan\desktop\tubesstd\child.h
 	<iostream>
 	"RELASI.h"
 	"PARENT.h"
 
-1587209050 source:c:\users\fendi irfan\desktop\tubesstd\main.cpp
+1587210741 source:c:\users\fendi irfan\desktop\tubesstd\main.cpp
 	"RELASI.h"
 	"PARENT.h"
 	"CHILD.h"
