@@ -27,4 +27,5 @@ void createListParent(Parent &p);
 void insertFirstParent(Parent &p,addressParent a);
 void createElementParent(addressParent &p,string judul,string penulis,string publisher,string tahun,string abstrak);
 addressParent findParent(Parent p,string judul);
+void deleteElementParent(Parent &p,addressParent x);
 #endif // PARENT_H_INCLUDED

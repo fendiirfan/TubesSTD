@@ -26,5 +26,6 @@ void printSemuaParentBesertaKeyword(Parent p);
 void createElementRelasi(addressRelasi &r);
 void connect(addressRelasi &ar,addressParent &p,addressChild &c);
 addressRelasi findRelasi(Relasi r,addressChild c,addressParent p);
+void deleteElementRelasi(Relasi &p,addressRelasi x);
 
 #endif // RELASI_H_INCLUDED

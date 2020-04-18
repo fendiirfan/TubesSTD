@@ -97,7 +97,8 @@ int main()
                             cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
                         }
                         else{
-
+                            Ap=findParent(p,judul);
+                            //lanjut disini proggres membuat penghapusan keyword
                         }
                     }
                     else if(pil==3){
