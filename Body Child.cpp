@@ -40,3 +40,14 @@ void insertLastChild(Child &c,addressChild ac){
     }
 
 }
+void deleteElementRelasi(Child &p,addressChild x){
+    if(x=firstChild(p)){
+        firstChild(p)=NULL;
+    }
+    else{
+        next(prev(x))=next(x);
+        prev(next(x))=prev(x);
+        next(x)=prev(x)=NULL;
+    }
+    delete x;
+}

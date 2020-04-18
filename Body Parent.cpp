@@ -37,6 +37,20 @@ addressParent findParent(Parent p,string judul){
         }
         return NULL;
     }
-
 }
+void deleteElementParent(Parent &p,addressParent x){
+    if(x=firstParent(p)){
+        firstParent(p)=NULL;
+    }
+    else{
+        addressParent s = firstParent(p);
+        while(next(s)!=x){
+            s=next(s);
+        }
+        next(s)=next(x);
+        next(x)=NULL;
+    }
+    delete x;
+}
+
 

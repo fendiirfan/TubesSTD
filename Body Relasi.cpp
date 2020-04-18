@@ -56,3 +56,17 @@ addressRelasi findRelasi(Relasi r,addressChild c,addressParent p){
         }
     }
 }
+void deleteElementRelasi(Relasi &p,addressRelasi x){
+    if(x=firstRelasi(p)){
+        firstRelasi(p)=NULL;
+    }
+    else{
+        addressRelasi s = firstRelasi(p);
+        while(next(s)!=x){
+            s=next(s);
+        }
+        next(s)=next(x);
+        next(x)=NULL;
+    }
+    delete x;
+}
