@@ -136,6 +136,23 @@ int main()
                         }
                     }
                     else if(pil==3){
+                        system ("cls");
+                        cout<<"Masukan Keywordnya : ";
+                        string keyword;
+                        cin>>keyword;
+                        if(firstRelasi(r)==NULL || findChild(c,keyword)==NULL){
+                            cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
+                        }
+                        else if(next(firstRelasi(r))==firstRelasi(r)){
+                            deleteElementRelasi(r,firstRelasi(r));
+                            deleteElementChild(c,firstChild(c));
+                            deleteElementParent(p,firstParent(p));
+                        }
+                        else{
+
+                        }
+                        system ("pause");
+                        system ("cls");
 
                     }
                     else if(pil==4){
@@ -158,8 +175,8 @@ int main()
                     menuPENGUNJUNG:
                     cout<<"| | =======================MENU PENGUNJUNG =======================                          | |"<<endl;
                     cout<<"| | 1. Tampilkan Semua Daftar Judul Artikel Ilmia Beserta Keywordnya                        | |"<<endl;
-                    cout<<"| | 2. Tampilkan Data Keyword Yang paling Banyak Keywordnya                                 | |"<<endl;
-                    cout<<"| | 3. Tampilkan Data Keyword Yang paling Sedikit Keywordnya                                | |"<<endl;
+                    cout<<"| | 2. Tampilkan Data Keyword Yang paling Banyak Judul Artikel Ilmiah                       | |"<<endl;
+                    cout<<"| | 3. Tampilkan Data Keyword Yang paling Sedikit Judul Artikel Ilmiah                      | |"<<endl;
                     cout<<"| | 4. Cari Koleksi Artikel Berdasarkan Keyword                                             | |"<<endl;
                     cout<<"| | 5. Munculkan Data Keyword                                                               | |"<<endl;
                     cout<<"| | 6. Munculkan Data Artikel Ilmiah                                                        | |"<<endl;
@@ -188,13 +205,117 @@ int main()
                         goto menuPENGUNJUNG;
                     }
                     else if(pil==2){
+                        system ("cls");
+                        if(firstRelasi(r)==NULL){
+                            cout<<"List Keyword Kosong atau Keyword tidak Ditemukan"<<endl;
+                        }
+                        else if(next(firstRelasi(r))==firstRelasi(r)){
+                            cout<<"Keyword Terbanyak Adalah : "<<info(firstChild(c))<<endl;
+                        }
+                        else{
+                            int jum =0;
+                            int i;
+                            addressChild max;
+                            Ar=firstRelasi(r);
+                            do{
+                                if(nextC(Ar)==firstChild(c)){
+                                        jum++;
+                                }
+                                Ar=next(Ar);
+                            }while(Ar!=firstRelasi(r));
+                            max = firstChild(c);
 
+                            Ac = next(firstChild(c));
+
+                            while(Ac!=NULL){
+                                i=0;
+                                Ar = firstRelasi(r);
+                                do{
+                                    if(nextC(Ar)==Ac){
+                                        i++;
+                                    }
+                                    Ar=next(Ar);
+                                }while(Ar!=firstRelasi(r));
+                                if(i>jum){
+                                    jum=i;
+                                    max = Ac;
+                                }
+                                Ac=next(Ac);
+                            }
+                            cout<<"Keyword Terbanyak Adalah : "<<info(max)<<endl;
+                        }
+
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
                     }
                     else if(pil==3){
+                        system ("cls");
+                        if(firstRelasi(r)==NULL){
+                            cout<<"List Keyword Kosong atau Keyword tidak Ditemukan"<<endl;
+                        }
+                        else if(next(firstRelasi(r))==firstRelasi(r)){
+                            cout<<"Keyword Terbanyak Adalah : "<<info(firstChild(c))<<endl;
+                        }
+                        else{
+                            int jum =0;
+                            int i;
+                            addressChild min;
+                            Ar=firstRelasi(r);
+                            do{
+                                if(nextC(Ar)==firstChild(c)){
+                                        jum++;
+                                }
+                                Ar=next(Ar);
+                            }while(Ar!=firstRelasi(r));
+                            min = firstChild(c);
 
+                            Ac = next(firstChild(c));
+
+                            while(Ac!=NULL){
+                                i=0;
+                                Ar = firstRelasi(r);
+                                do{
+                                    if(nextC(Ar)==Ac){
+                                        i++;
+                                    }
+                                    Ar=next(Ar);
+                                }while(Ar!=firstRelasi(r));
+                                if(i<jum){
+                                    jum=i;
+                                    min = Ac;
+                                }
+                                Ac=next(Ac);
+                            }
+                            cout<<"Keyword Tersedikit Adalah : "<<info(min)<<endl;
+                        }
+
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
                     }
 
                     else if(pil==4){
+                        string keyword;
+                        cout<<"Input Keyword : ";
+                        cin>>keyword;
+                        if(firstChild(c)==NULL || findChild(c,keyword)==NULL){
+                            cout<<"List Keyword Kosong atau Keyword tidak Ditemukan"<<endl;
+                        }
+                        else{
+                            addressChild op = findChild(c,keyword);
+                            cout<<endl;
+                            Ar=firstRelasi(r);
+                            do{
+                                if(nextC(Ar)==op){
+                                    cout<<"- "<<info(nextP(Ar)).judul<<endl;
+                                }
+                                Ar=next(Ar);
+                            }while(Ar!=firstRelasi(r));
+                        }
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
 
                     }else if(pil==5){
                         if(firstChild(c)==NULL){

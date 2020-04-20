@@ -38,7 +38,7 @@ void connect(addressRelasi &ar,addressParent p,addressChild c);
 addressRelasi findRelasi(Relasi r,addressChild c,addressParent p);
 //IS.
 //FS.
-void deleteElementRelasi(Relasi &p,addressRelasi x);
+void deleteElementRelasi(Relasi &r,addressRelasi x);
 //IS. TERDEFINISI LIST RELASI TIDAK KOSONG DAN ADDRESPARENT
 //FS. ADDRES DI DALAM LIST YG DITUNJUK OLEH ADDRESRELASI TELAH DI HAPUS DALAM LIST
 void pembersihanChild(Child &C,addressChild c,Relasi r);

@@ -17,12 +17,10 @@ void insertLastRelasi(Relasi &r,addressRelasi a){
         next(a)=a;
     }
     else if(next(firstRelasi(r))==firstRelasi(r)){
-            cout<<"magefirah"<<endl;
         next(firstRelasi(r))=a;
         next(a)=firstRelasi(r);
     }
     else{
-        cout<<"sukmawati"<<endl;
         addressRelasi c = firstRelasi(r);
         do{
             c = next(c);
@@ -59,11 +57,13 @@ void connect(addressRelasi &ar,addressParent p,addressChild c){
 //    }
 //}
 void deleteElementRelasi(Relasi &p,addressRelasi x){
-    if(next(firstRelasi(p))=firstRelasi(p)){
+    if(next(firstRelasi(p))==firstRelasi(p)){
+        cout<<"as1"<<endl;
         firstRelasi(p)=NULL;
     }
     else if(x==firstRelasi(p)){
         addressRelasi r = firstRelasi(p);
+    cout<<"as2"<<endl;
         do{
             r=next(r);
         }while(next(r)!=firstRelasi(p));
@@ -72,6 +72,7 @@ void deleteElementRelasi(Relasi &p,addressRelasi x){
         next(x)=NULL;
     }
     else if(next(x)==firstRelasi(p)){
+            cout<<"as3"<<endl;
         addressRelasi s = firstRelasi(p);
         while(next(s)!=x){
             s=next(s);
@@ -80,6 +81,7 @@ void deleteElementRelasi(Relasi &p,addressRelasi x){
         next(x)=NULL;
     }
     else{
+        cout<<"as4"<<endl;
         addressRelasi s = firstRelasi(p);
         while(next(s)!=x){
             s=next(s);
