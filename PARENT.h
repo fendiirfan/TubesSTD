@@ -24,8 +24,18 @@ struct Parent { //membuat list parent
     addressParent firstParent;
 };
 void createListParent(Parent &p);
+//IS. -
+//FS. TERDEFINISI LIST
 void insertFirstParent(Parent &p,addressParent a);
+//IS. TERDEFINISI LIST MUNGKIN KOSONG DAN ADDRES PARENT_H_INCLUDED
+//FS. ADDRES PARENT DIMASUKAN DIAWAL LIST
 void createElementParent(addressParent &p,string judul,string penulis,string publisher,string tahun,string abstrak);
+//IS. -
+//FS. TERDEFINISI ELEMENT DENGAN INFO BERISI JUDUL...
 addressParent findParent(Parent p,string judul);
+//IS. TERDEFINISI LIST PARENT MUNGKIN KOSONG DAN SEBUAT JUDUL
+//FS. TERDEFINISI ADDRES PARENT YANG BERADA DI LIST PARENT DENGAN STRING JUDUL DAN JIKA TIDAK DITEMUKAN ATAU KOOSNG RETURN NULL
 void deleteElementParent(Parent &p,addressParent x);
+//IS. TERDEFINISI LIST PARENT TIDAK KOOSNG DAN ADDRES PARENT YANG INGIN DIHAPUS
+//FS. ELEMEN ADDRESPARENT TERHAPUS DI LIST
 #endif // PARENT_H_INCLUDED

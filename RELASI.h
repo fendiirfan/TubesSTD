@@ -21,11 +21,28 @@ struct Relasi { //membuat list Child
 };
 
 void createListRelasi(Relasi &r);
+//IS. -
+//FS. TERDEFINISI LIST
 void insertLastRelasi(Relasi &r,addressRelasi a);
+//IS. TERDEFINISI LIST RELASI MUNGKIN KOSONG DAN ADDRERELASI
+//FS. ELEMENT ADDRESRELASI TELAH DIMASUKAN DIAKHIR LIST
 void printSemuaParentBesertaKeyword(Parent p);
+//IS.
+//FS.
 void createElementRelasi(addressRelasi &r);
-void connect(addressRelasi &ar,addressParent &p,addressChild &c);
+//IS. -
+//FS. tERDEFINISI ELEMENT
+void connect(addressRelasi &ar,addressParent p,addressChild c);
+//IS. TERDEFINISI ADDRESS RELASI TIDAK KOSONG DAN addressChild DAN addressParent
+//FS. MENGHUBUNGKAN ANATARA ADDRESS CHILD DAN PARENT DENGAN MENGGUNAKAN ADDRES RELASI
 addressRelasi findRelasi(Relasi r,addressChild c,addressParent p);
+//IS.
+//FS.
 void deleteElementRelasi(Relasi &p,addressRelasi x);
+//IS. TERDEFINISI LIST RELASI TIDAK KOSONG DAN ADDRESPARENT
+//FS. ADDRES DI DALAM LIST YG DITUNJUK OLEH ADDRESRELASI TELAH DI HAPUS DALAM LIST
+void pembersihanChild(Child &C,addressChild c,Relasi r);
+//IS.
+//FS.
 
 #endif // RELASI_H_INCLUDED

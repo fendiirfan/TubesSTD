@@ -29,7 +29,7 @@ int main()
             cout<<"| | ============================================================== | |"<<endl;
             cout<<"Pilih Menu : ";
             cin>>pil;
-            if(pil!=1 && pil!=2 && pil!=3 ){
+            if(pil!=1 && pil!=2 && pil!=3){
                 system ("cls");
                 cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
                 system ("pause");
@@ -38,7 +38,6 @@ int main()
             }
      //       system ("pause");
             system ("cls");
-
             switch (pil){
                 case 1 :
                     menuPEGAWAI:
@@ -90,15 +89,50 @@ int main()
                     else if(pil==2){
                         string judul;
 
-                        cout<<"Masukan Judul Artikel yang Ingin Dihapus             :";
+                        cout<<"Masukan Judul Artikel yang Ingin Dihapus             : ";
                         cin>>judul;
                         system ("cls");
-                        if(findParent(p,judul)==NULL || firstParent(p)==NULL){
+                        if(findParent(p,judul)==NULL || firstParent(p)==NULL || firstChild(c)==NULL || firstRelasi(r)==NULL){
                             cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
                         }
                         else{
-                            Ap=findParent(p,judul);
-                            //lanjut disini proggres membuat penghapusan keyword
+                            cout<<"fira1"<<endl;
+                            if(next(firstParent(p))==NULL){
+                                cout<<"fira2"<<endl;
+                                addressChild a = firstChild(c);
+                                firstChild(c)=NULL;
+                                delete a;
+                                addressParent u = firstParent(p);
+                                firstParent(p)=NULL;
+                                delete u;
+                                addressRelasi w = firstRelasi(r);
+                                firstRelasi(r)=NULL;
+                                delete w;
+
+                            }
+                            else{
+                                Ap=findParent(p,judul);
+                                cout<<info(Ap).judul<<endl;
+                                addressRelasi g = firstRelasi(r);
+                                do{
+                                    cout<<"aaaaaaaaaaaaaaaaa"<<endl;
+                                    if(nextP(g)==Ap){
+                                        Ac=nextC(g);
+                                        cout<<info(Ac)<<endl;
+                                        Ar=g;
+                                    }
+                                    g=next(g);
+                                }while(Ac!=nextC(Ar) && g!=firstRelasi(r));
+                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
+                                pembersihanChild(c,Ac,r);
+                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
+                                deleteElementRelasi(r,Ar);
+                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
+                                deleteElementParent(p,Ap);
+                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
+                                //cout<<"Parent:"<<info(firstParent(p)).judul<<" Relasi"<<info(firstRelasi(r))<<""<<info(nextC(firstRelasi(r)))<<endl;
+                                //cout<<"Parent:"<<info(nextP(firstRelasi(r))).judul<<" Child:"<<info(nextC(firstRelasi(r)))<<endl;
+                            }
                         }
                     }
                     else if(pil==3){
@@ -121,7 +155,84 @@ int main()
                     goto menuPEGAWAI;
 
                 case 2 :
-                    goto menuUtama;
+                    menuPENGUNJUNG:
+                    cout<<"| | =======================MENU PENGUNJUNG =======================                          | |"<<endl;
+                    cout<<"| | 1. Tampilkan Semua Daftar Judul Artikel Ilmia Beserta Keywordnya                        | |"<<endl;
+                    cout<<"| | 2. Tampilkan Data Keyword Yang paling Banyak Keywordnya                                 | |"<<endl;
+                    cout<<"| | 3. Tampilkan Data Keyword Yang paling Sedikit Keywordnya                                | |"<<endl;
+                    cout<<"| | 4. Cari Koleksi Artikel Berdasarkan Keyword                                             | |"<<endl;
+                    cout<<"| | 5. Munculkan Data Keyword                                                               | |"<<endl;
+                    cout<<"| | 6. Munculkan Data Artikel Ilmiah                                                        | |"<<endl;
+                    cout<<"| | 7. Menu Utama                                                                           | |"<<endl;
+                    cout<<"| | ===========================================================                             | |"<<endl;
+                    cout<<"Pilih Menu : ";
+                    cin>>pil;
+  //                system ("pause");
+                    system ("cls");
+                    if(pil==1){
+                        if(firstRelasi(r)==NULL){
+                            cout<<"Daftar Kosong"<<endl;
+                        }
+                        else if(next(firstRelasi(r))==firstRelasi(r)){
+                            cout<<info(nextP(firstRelasi(r))).judul<<"->"<<info(nextC(firstRelasi(r)))<<endl;
+                        }
+                        else{
+                            Ar=firstRelasi(r);
+                            do{
+                                cout<<"Judul : "<<info(nextP(Ar)).judul<<"  ->  Keyword: "<<info(nextC(Ar))<<endl;
+                                Ar=next(Ar);
+                            }while(Ar!=firstRelasi(r));
+                        }
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
+                    }
+                    else if(pil==2){
+
+                    }
+                    else if(pil==3){
+
+                    }
+
+                    else if(pil==4){
+
+                    }else if(pil==5){
+                        if(firstChild(c)==NULL){
+                            cout<<"DAFTAR KEYWORD KOSONG"<<endl;
+                        }
+                        else{
+                            Ac=firstChild(c);
+                            while(Ac!=NULL){
+                                cout<<"- "<<info(Ac)<<endl;
+                                Ac=next(Ac);
+                            }
+                        }
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
+                    }else if(pil==6){
+                        if(firstChild(c)==NULL){
+                            cout<<"DAFTAR JUDUL KOSONG"<<endl;
+                        }
+                        else{
+                            Ap = firstParent(p);
+                            while(Ap!=NULL){
+                                cout<<"- "<<info(Ap).judul<<endl;
+                                Ap=next(Ap);
+                            }
+                        }
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
+                    }else if(pil==7){
+                        goto menuUtama;
+                    }
+                    else{
+                        cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
+                    }
                 case 3 :
                     cout<<"| | ==========TERIMA KASIH TELAH MENGGUNAKAN PROGRAM INI========== | |";
                     break;
