@@ -96,9 +96,7 @@ int main()
                             cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
                         }
                         else{
-                            cout<<"fira1"<<endl;
                             if(next(firstParent(p))==NULL){
-                                cout<<"fira2"<<endl;
                                 addressChild a = firstChild(c);
                                 firstChild(c)=NULL;
                                 delete a;
@@ -115,7 +113,6 @@ int main()
                                 cout<<info(Ap).judul<<endl;
                                 addressRelasi g = firstRelasi(r);
                                 do{
-                                    cout<<"aaaaaaaaaaaaaaaaa"<<endl;
                                     if(nextP(g)==Ap){
                                         Ac=nextC(g);
                                         cout<<info(Ac)<<endl;
@@ -123,15 +120,9 @@ int main()
                                     }
                                     g=next(g);
                                 }while(Ac!=nextC(Ar) && g!=firstRelasi(r));
-                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
                                 pembersihanChild(c,Ac,r);
-                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
                                 deleteElementRelasi(r,Ar);
-                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
                                 deleteElementParent(p,Ap);
-                                cout<<"asu"<<info(firstParent(p)).judul<<" "<<info(firstChild(c))<<endl;
-                                //cout<<"Parent:"<<info(firstParent(p)).judul<<" Relasi"<<info(firstRelasi(r))<<""<<info(nextC(firstRelasi(r)))<<endl;
-                                //cout<<"Parent:"<<info(nextP(firstRelasi(r))).judul<<" Child:"<<info(nextC(firstRelasi(r)))<<endl;
                             }
                         }
                     }
