@@ -29,6 +29,7 @@ addressChild findChild(Child c,string keyword){
 void insertLastChild(Child &c,addressChild ac){
     if(firstChild(c)==NULL){
         firstChild(c)=ac;
+        prev(firstChild(c))=NULL;
     }
     else{
         addressChild a = firstChild(c);
@@ -40,14 +41,47 @@ void insertLastChild(Child &c,addressChild ac){
     }
 
 }
-void deleteElementRelasi(Child &p,addressChild x){
-    if(x=firstChild(p)){
-        firstChild(p)=NULL;
+void deleteElementChild(Child &c,addressChild x){
+    if(next(firstChild(c))==NULL){
+        firstChild(c)=NULL;
+    }
+    else if(next(x)==NULL){
+        next(prev(x))=NULL;
+        prev(x)=NULL;
+        next(x)=NULL;
+    }
+    else if(x==firstChild(c)){
+        firstChild(c)=next(x);
+        prev(firstChild(c))=NULL;
+        next(x)=NULL;
     }
     else{
         next(prev(x))=next(x);
         prev(next(x))=prev(x);
-        next(x)=prev(x)=NULL;
+        next(x)=NULL;
+        prev(x)=NULL;
     }
     delete x;
+}
+void pembersihanChild(Child &C,addressChild c,Relasi r){
+    if(firstRelasi(r)!=NULL){
+        cout<<"cek pembersih child"<<endl;
+        addressRelasi q = firstRelasi(r);
+        int i=0;
+        do{
+            cout<<i<<endl;
+            if(nextC(q)==c){
+                i++;
+            }
+            q=next(q);
+            cout<<"sesudah :"<<i<<endl;
+        }while(q!=firstRelasi(r));
+        if(i==1){
+            cout<<"jancuk"<<endl;
+            deleteElementChild(C,c);
+        }
+        else{
+            cout<<"amel"<<endl;
+        }
+    }
 }
