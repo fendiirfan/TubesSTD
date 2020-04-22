@@ -54,17 +54,38 @@ int main()
                     if(pil==1){
                         string judul, penulis, publisher, tahun, abstrak;
                         string keyword;
-                        cout<<"Input Judul Artikel Ilmiah   :"<<endl;
+                        judulAb:
+                        cout<<"Input Judul Artikel Ilmiah   : ";
                         cin>>judul;
-                        cout<<"Input Penulis               :"<<endl;
+                        if(findParent(p,judul)!=NULL){
+                            system("cls");
+                            cout<<"Judul Artikel Telah Terdaftar"<<endl;
+                            ulangi:
+                            cout<<"1. Ulangi Inputan Judul\n2. Kembali Ke Menu Pegawai\nInput : ";
+                            cin>>pil;
+                            system("cls");
+                            if(pil==1){
+                                goto judulAb;
+                            }
+                            else if(pil==2){
+                                goto menuPEGAWAI;
+                            }
+                            else{
+                                cout<<"Input Harus Valid!!!";
+                                goto ulangi;
+                            }
+
+
+                        }
+                        cout<<"Input Penulis               : ";
                         cin>>penulis;
-                        cout<<"Input Publisher             :"<<endl;
+                        cout<<"Input Publisher             : ";
                         cin>>publisher;
-                        cout<<"Input Tahun                 :"<<endl;
+                        cout<<"Input Tahun                 : ";
                         cin>>tahun;
-                        cout<<"Input Abstrak               :"<<endl;
+                        cout<<"Input Abstrak               : ";
                         cin>>abstrak;
-                        cout<<"Input Keyword               :"<<endl;
+                        cout<<"Input Keyword               : ";
                         cin>>keyword;
                         createElementParent(Ap,judul,penulis,publisher,tahun,abstrak);
                         insertFirstParent(p,Ap);
@@ -131,18 +152,38 @@ int main()
                         cout<<"Masukan Keywordnya : ";
                         string keyword;
                         cin>>keyword;
+
                         if(firstRelasi(r)==NULL || findChild(c,keyword)==NULL){
                             cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
                         }
                         else if(next(firstRelasi(r))==firstRelasi(r)){
+
                             deleteElementRelasi(r,firstRelasi(r));
                             deleteElementChild(c,firstChild(c));
                             deleteElementParent(p,firstParent(p));
                         }
                         else{
+                            addressRelasi t= firstRelasi(r);
+                            Ac= findChild(c,keyword);
+                            cout<<"fendassa "<<info(Ac)<<endl;
+                            do{
+                                cout<<"amalia"<<endl;
+                                if(nextC(t)==Ac){
+                                    cout<<"fendi"<<endl;
+                                    deleteElementParent(p,nextP(t));
+                                    Ar= t;
+                                    t=next(t);
+                                    deleteElementRelasi(r,Ar);
+                                }
+                                else{
+                                        cout<<"amalia sd"<<endl;
+                                    t = next(t);
+                                }
 
+                            }while(t!=firstRelasi(r));
+                            deleteElementChild(c,Ac);
                         }
-                        system ("pause");
+                        system("pause");
                         system ("cls");
 
                     }
