@@ -38,4 +38,7 @@ addressParent findParent(Parent p,string judul);
 void deleteElementParent(Parent &p,addressParent x);
 //IS. TERDEFINISI LIST PARENT TIDAK KOOSNG DAN ADDRES PARENT YANG INGIN DIHAPUS
 //FS. ELEMEN ADDRESPARENT TERHAPUS DI LIST
+void tampilkanSemuaJudulartikel(Parent p,addressParent Ap);
 #endif // PARENT_H_INCLUDED
+
+

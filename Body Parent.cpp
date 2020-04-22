@@ -40,18 +40,14 @@ addressParent findParent(Parent p,string judul){
     }
 }
 void deleteElementParent(Parent &p,addressParent x){
-    cout<<"cek1"<<endl;
     if(next(firstParent(p))==NULL){
-            cout<<"cek2"<<endl;
         firstParent(p)=NULL;
     }
     else if(x==firstParent(p)){
-        cout<<"ceksu"<<endl;
         firstParent(p)=next(x);
         next(x)=NULL;
     }
     else if(next(x)==NULL){
-        cout<<"cek3"<<endl;
         addressParent s = firstParent(p);
         while(next(s)!=x){
             s=next(s);
@@ -59,7 +55,6 @@ void deleteElementParent(Parent &p,addressParent x){
         next(s)=NULL;
     }
     else{
-        cout<<"cek4"<<endl;
         addressParent s = firstParent(p);
         while(next(s)!=x){
             s=next(s);
@@ -69,5 +64,6 @@ void deleteElementParent(Parent &p,addressParent x){
     }
     delete x;
 }
+
 
 
