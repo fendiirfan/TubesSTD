@@ -13,16 +13,20 @@ void createElementRelasi(addressRelasi &e){
 }
 void insertLastRelasi(Relasi &r,addressRelasi a){
     if(firstRelasi(r)==NULL){
+        cout<<"1"<<endl;
         firstRelasi(r)=a;
         next(a)=a;
     }
     else if(next(firstRelasi(r))==firstRelasi(r)){
+        cout<<"2"<<endl;
         next(firstRelasi(r))=a;
         next(a)=firstRelasi(r);
     }
     else{
+
         addressRelasi c = firstRelasi(r);
         do{
+            cout<<"3"<<endl;
             c = next(c);
         }while(next(c)!=firstRelasi(r));
         next(c)=a;
