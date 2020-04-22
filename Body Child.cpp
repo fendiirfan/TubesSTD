@@ -65,23 +65,30 @@ void deleteElementChild(Child &c,addressChild x){
 }
 void pembersihanChild(Child &C,addressChild c,Relasi r){
     if(firstRelasi(r)!=NULL){
-        cout<<"cek pembersih child"<<endl;
         addressRelasi q = firstRelasi(r);
         int i=0;
         do{
-            cout<<i<<endl;
             if(nextC(q)==c){
                 i++;
             }
             q=next(q);
-            cout<<"sesudah :"<<i<<endl;
         }while(q!=firstRelasi(r));
         if(i==1){
-            cout<<"jancuk"<<endl;
             deleteElementChild(C,c);
         }
-        else{
-            cout<<"amel"<<endl;
+    }
+}
+void tampilkanSemuaJudulartikel(Parent p,addressParent Ap){
+    if(firstParent(p)==NULL){
+        cout<<"DAFTAR JUDUL KOSONG"<<endl;
+    }
+    else{
+        Ap = firstParent(p);
+        while(Ap!=NULL){
+            cout<<"- "<<info(Ap).judul<<endl;
+            Ap=next(Ap);
         }
     }
+    system ("pause");
+    system ("cls");
 }
