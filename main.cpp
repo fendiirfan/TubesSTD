@@ -163,29 +163,12 @@ int main()
                             deleteElementParent(p,firstParent(p));
                         }
                         else{
-                            addressRelasi t= firstRelasi(r);
-                            Ac= findChild(c,keyword);
-                            cout<<"fendassa "<<info(Ac)<<endl;
-                            do{
-                                cout<<"amalia"<<endl;
-                                if(nextC(t)==Ac){
-                                    cout<<"fendi"<<endl;
-                                    deleteElementParent(p,nextP(t));
-                                    Ar= t;
-                                    t=next(t);
-                                    deleteElementRelasi(r,Ar);
-                                }
-                                else{
-                                        cout<<"amalia sd"<<endl;
-                                    t = next(t);
-                                }
 
-                            }while(t!=firstRelasi(r));
                             deleteElementChild(c,Ac);
-                        }
                         system("pause");
                         system ("cls");
 
+                        }
                     }
                     else if(pil==4){
                         goto menuUtama;
