@@ -113,8 +113,6 @@ void HapusDaftarArtikel(Relasi &r, Parent &p, Child &c, addressChild Ac, address
         }
     }
 }
-
-
 void HapusDaftarKeyword(Relasi &r, Parent &p, Child &c, addressChild Ac, addressRelasi Ar, addressParent Ap){
     system ("cls");
     cout<<"Masukan Keywordnya : ";

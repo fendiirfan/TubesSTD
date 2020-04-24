@@ -28,9 +28,6 @@ void createListRelasi(Relasi &r);
 void insertLastRelasi(Relasi &r,addressRelasi a);
 //IS. TERDEFINISI LIST RELASI MUNGKIN KOSONG DAN ADDRERELASI
 //FS. ELEMENT ADDRESRELASI TELAH DIMASUKAN DIAKHIR LIST
-void printSemuaParentBesertaKeyword(Parent p);
-//IS.
-//FS.
 void createElementRelasi(addressRelasi &r);
 //IS. -
 //FS. tERDEFINISI ELEMENT
@@ -41,8 +38,8 @@ void deleteElementRelasi(Relasi &r,addressRelasi x);
 //IS. TERDEFINISI LIST RELASI TIDAK KOSONG DAN ADDRESPARENT
 //FS. ADDRES DI DALAM LIST YG DITUNJUK OLEH ADDRESRELASI TELAH DI HAPUS DALAM LIST
 void pembersihanChild(Child &C,addressChild c,Relasi r);
-//IS.
-//FS.
+//IS. Terdefinisi list child dan list parent yang tidak kosong dan memiliki minimal dua element dan terdefisnisi element yang akan dihapus ditunjukan oleh addresChild.
+//FS. Element yang ditunjuk oleh addressChild telah terhapus jika element tersebut hanya memiliki satu relasi.
 void HapusDaftarArtikel(Relasi &r, Parent &p, Child &c, addressChild Ac, addressRelasi Ar, addressParent Ap);
 void HapusDaftarKeyword(Relasi &r, Parent &p, Child &c, addressChild Ac, addressRelasi Ar, addressParent Ap);
 void tampilkanJudulArtikelBesertaKeywordnya(Relasi r,addressRelasi Ar);

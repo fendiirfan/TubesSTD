@@ -1,7 +1,7 @@
 #include "RELASI.h"
 #include "PARENT.h"
 #include "CHILD.h"
-
+#include <string>
 int main()
 {
     addressChild Ac;
@@ -34,7 +34,6 @@ int main()
                 system ("cls");
                 goto menuUtama;
             }
-     //       system ("pause");
             system ("cls");
             switch (pil){
                 case 1 :
@@ -50,11 +49,12 @@ int main()
   //                  system ("pause");
                     system ("cls");
                     if(pil==1){
-                        string judul, penulis, publisher, tahun, abstrak;
+                        string judul, penulis, publisher, tahun, abstrak,k;
                         string keyword;
                         judulAb:
+                        getline(cin,k);
                         cout<<"Input Judul Artikel Ilmiah  : ";
-                        cin>>judul;
+                        getline(cin,judul);
                         if(findParent(p,judul)!=NULL){
                             system("cls");
                             cout<<"Judul Artikel Telah Terdaftar"<<endl;
@@ -74,15 +74,15 @@ int main()
                             }
                         }
                         cout<<"Input Penulis               : ";
-                        cin>>penulis;
+                        getline(cin,penulis);
                         cout<<"Input Publisher             : ";
-                        cin>>publisher;
+                        getline(cin,publisher);
                         cout<<"Input Tahun                 : ";
-                        cin>>tahun;
+                        getline(cin,tahun);
                         cout<<"Input Abstrak               : ";
-                        cin>>abstrak;
+                        getline(cin,abstrak);
                         cout<<"Input Keyword               : ";
-                        cin>>keyword;
+                        getline(cin,keyword);
                         createElementParent(Ap,judul,penulis,publisher,tahun,abstrak);
                         insertFirstParent(p,Ap);
                         createElementRelasi(Ar);
