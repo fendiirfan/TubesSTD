@@ -79,7 +79,8 @@ void deleteElementRelasi(Relasi &p,addressRelasi x){
 void HapusDaftarArtikel(Relasi &r, Parent &p, Child &c, addressChild Ac, addressRelasi Ar, addressParent Ap){
     string judul;
     cout<<"Masukan Judul Artikel yang Ingin Dihapus             : ";
-    cin>>judul;
+    getline(cin,judul);
+    getline(cin,judul);
     system ("cls");
     if(findParent(p,judul)==NULL || firstParent(p)==NULL || firstChild(c)==NULL || firstRelasi(r)==NULL){
         cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
@@ -117,7 +118,8 @@ void HapusDaftarKeyword(Relasi &r, Parent &p, Child &c, addressChild Ac, address
     system ("cls");
     cout<<"Masukan Keywordnya : ";
     string keyword;
-    cin>>keyword;
+    getline(cin,keyword);
+    getline(cin,keyword);
 
     if(firstRelasi(r)==NULL || findChild(c,keyword)==NULL){
         cout<<"Judul Tidak Ditemukan atau Data Artikel Kosong"<<endl;
@@ -261,7 +263,8 @@ void TampilkanKeywordYangMemilikiRelasiKejudulIlmiahTersedikit(Relasi r,Child c,
 void CariArtikelberdasarkanKeyword(Relasi r,Child c,addressRelasi Ar){
     string keyword;
     cout<<"Input Keyword : ";
-    cin>>keyword;
+    getline(cin,keyword);
+    getline(cin,keyword);
     if(firstChild(c)==NULL || findChild(c,keyword)==NULL){
         cout<<"List Keyword Kosong atau Keyword tidak Ditemukan"<<endl;
     }

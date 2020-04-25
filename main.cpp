@@ -15,6 +15,9 @@ int main()
     createListRelasi(r);
     createListChild(c);
 
+    string judul, penulis, publisher, tahun, abstrak,k;
+    string keyword;
+
             cout<<"| | ========================PERPUSTAKAAN========================== | |"<<endl;
             cout<<"| | ========================SELAMAT DATANG======================== | |"<<endl;
             cout<<endl;
@@ -49,8 +52,6 @@ int main()
   //                  system ("pause");
                     system ("cls");
                     if(pil==1){
-                        string judul, penulis, publisher, tahun, abstrak,k;
-                        string keyword;
                         judulAb:
                         getline(cin,k);
                         cout<<"Input Judul Artikel Ilmiah  : ";
@@ -127,7 +128,8 @@ int main()
                     cout<<"| | 4. Cari Koleksi Artikel Berdasarkan Keyword                                             | |"<<endl;
                     cout<<"| | 5. Munculkan Data Keyword                                                               | |"<<endl;
                     cout<<"| | 6. Munculkan Data Artikel Ilmiah                                                        | |"<<endl;
-                    cout<<"| | 7. Menu Utama                                                                           | |"<<endl;
+                    cout<<"| | 7. Munculkan Informasi Lengkap dari Suatu Judul Artikel Ilmiah                          | |"<<endl;
+                    cout<<"| | 8. Menu Utama                                                                           | |"<<endl;
                     cout<<"| | ===========================================================                             | |"<<endl;
                     cout<<"Pilih Menu : ";
                     cin>>pil;
@@ -159,9 +161,33 @@ int main()
                         tampilkanSemuaJudulartikel(p,Ap);
                         goto menuPENGUNJUNG;
                     }else if(pil==7){
+
+                        cout<<"Inputkan Judul : ";
+                        getline(cin,judul);
+                        getline(cin,judul);
+                        Ap=findParent(p,judul);
+                        system ("cls");
+                        if(findParent(p,judul)==NULL || firstChild(c)==NULL){
+                            cout<<"Data Artikel Tidak Ditemukan"<<endl;
+                        }
+                        else{
+                            Ar=firstRelasi(r);
+                        do{
+                            Ar=next(Ar);
+                        }while(nextP(Ar)!=Ap);
+                            cout<<"Judul       : "<<info(nextP(Ar)).judul<<endl;
+                            cout<<"Penulis     : "<<info(nextP(Ar)).penulis<<endl;
+                            cout<<"Publisher   : "<<info(nextP(Ar)).publisher<<endl;
+                            cout<<"Tahun       : "<<info(nextP(Ar)).tahun<<endl;
+                            cout<<"Abstrak     : "<<info(nextP(Ar)).abstrak<<endl;
+                            cout<<"Keyword     : "<<info(nextC(Ar))<<endl;
+                        }
+                        system ("pause");
+                        system ("cls");
+                        goto menuPENGUNJUNG;
+                    }else if(pil==8){
                         goto menuUtama;
-                    }
-                    else{
+                    }else{
                         cout<<"| | =======================Mohon Pilih Menu yang valid!!!======================= | |"<<endl;
                         system ("pause");
                         system ("cls");
